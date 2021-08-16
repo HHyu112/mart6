@@ -1,0 +1,92 @@
+<html>
+    <head>
+     <base href="http://hotmart69.online/">
+    <meta http-equiv="Content-type" content="text/html";charset="utf-8">
+     <title>Dark coin Mining - Mining with high profits</title>
+    <link rel= "stylesheet" href="style.css"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <body onload="checklogin(); checkorder();updatecart();load();verification()">
+     <div id="header">
+    <div class="navbar">
+    <a href="index">Home</a>
+    <a href="product">Product</a>
+    <a href="cart">Cart <span id="cartorder"></span></a>
+    <a href="message">Message</a>
+    <a href="wallet">Wallet</a>
+    <a href="order">Order</a>
+    <a href="dashboard">Dashboard</a>
+    <a href="setting">Setting</a>
+    <a href="index" onclick="logout()">Log Out</a> 
+    </div>
+    </div>
+    <div id="main">
+    <h3>Payment</h3>
+    <div id= "payment-gateway">
+    <button class="tablink" onclick="openCrypto('BTC', this, '#FF9900')" id="defaultOpenbtc">BTC</button>
+    <button class="tablink" onclick="openCrypto('BCH', this, 'lightblue')">BCH</button>
+    <button class="tablink" onclick="openCrypto('LTC', this, 'gold')" id="defaultOpenltc">LTC</button>
+    <div id="BTC" class="tabcontent">
+    <span class="quote_bitcoin"><img src="https://www.bitcoinqrcodemaker.com/api/style=bitcoin&fiat=USD&address=12iAb68C414u53AL5f7PtMBCFK5ezZxJc4" width="150" height="150"></span>
+    <div id="orderprice_btc1">0 USD <span id="orderprice_btc">0.0001 </span></div><br>
+    <div class="author_bitcoin">12iAb68C414u53AL5f7PtMBCFK5ezZxJc4 </div><br> 
+    <button id= "copytoclipboard" class= "copytoclipboard" onClick="copyaddressbtc()">Copy Address</button>
+    </div>
+    <div id="BCH" class="tabcontent">
+    <span class="quote_bitcoincash"><img src="https://www.bitcoinqrcodemaker.com/api/?style=bitcoincash&fiat=USD&address=qqhmgzn32jl9pufhwtald8m67mrwqmvqeujl7mr5es" width="150" height="150"></span>
+    <div id="orderprice_bch1"> 0 USD <span id="orderprice_bch">0.1 </span></div><br>
+    <div class="author_bitcoincash">12iAb68C414u53AL5f7PtMBCFK5ezZxJc4 </div><br>
+    <button id= "copytoclipboard" class= "copytoclipboard" onClick="copyaddressbch()">Copy Address</button>
+    </div>
+    <div id="LTC" class="tabcontent">
+    <span class="quote_litecoin"><img src="https://www.bitcoinqrcodemaker.com/api/?style=litecoin&fiat=USD&address=Lav3xNomwXvGsESoy2WV7wwAE12K3JKJDu" width="150" height="150"></span>
+    <div id="orderprice_ltc1"> 0 USD <span id="orderprice_ltc">1 </span></div><br>
+    <div class="author_litecoin">12iAb68C414u53AL5f7PtMBCFK5ezZxJc4 </div><br>
+    <button id= "copytoclipboard" class= "copytoclipboard" onClick="copyaddressltc()">Copy Address</button>
+    </div>
+    </div>
+    <br>
+    <div class="progress" style="border:solid 1px black;color:green;height:20px; text-align: center;" id="progressBar">
+    <div class="progress-bar bg-success" style="background-color: #067323;color:black;height:20px" role="progressbar"></div>
+    </div>
+    <h4>Your Plan will be added to <strong>Dashboard </strong>once the payment has been confirmed on blockchain.</h4>
+    <p>What to do next? </p>
+    <p>1) Please send the amount of bitcoin to address the given address as shown above. (Make sure to send enough to cover any coin transaction fees!) You will need to initiate the payment using your software or online wallet and copy/paste the address and payment amount into it. We will email you when all funds have been received. You have 1 day, 3 hours, 29 minutes, 20 seconds for us to receive confirmed funds. If you send funds that don't confirm by the timeout or don't send enough coins you will receive an automatic email to claim your funds within 8 hours. If you don't receive the email contact us with the information below and CardingSwipez.com will send you a refund:</p>
+        <ul>
+            <li>This verification code: <span id="verificationcode" style="font-weight:bold"></span> (to verify that you are the transaction sender.)</li>
+        </ul>
+        <p>2) After sending payment, review the status of your transaction on this page. Once the payment is confirmed several times in the block chain, the payment will be completed and the merchant will be notified. The confirmation process usually takes 10-45 minutes but varies based on the coin's target block time and number of block confirms required. The status page is available for the next 30 days. </p>
+<h3>What if I accidentally don't send enough?</h3>
+<p>If you don't send enough, that is OK. Just send the remainder and we will combine them for you. You can also send from multiple wallets/accounts.</p>
+    </div>
+     <div id="footer">
+    <div id="footertext">Dark coin Mining - Mining with high profits
+    <a href="index">Home</a>
+    <a href="product">Product</a>
+    <a href="cart">Cart <span id="cartorder"></span></a>
+    <a href="message">Message</a>
+    <a href="wallet">Wallet</a>
+    <a href="order">Order</a>
+    <a href="dashboard">Dashboard</a>
+    <a href="setting">Setting</a>
+    <a href="index" onclick="logout()">Log Out</a>
+    </div>
+    </div>
+    </body>
+    </head>
+<script>
+
+progress(3600, 3600, $('#progressBar'));
+</script>
+<script src="./js/btc.js"></script>
+<script src="./js/bch.js"></script>
+<script src="./js/ltc.js"></script>
+<script src="./js/payment.js"></script>
+<script src="./js/btc_conversion.js"></script>
+<script src="./js/bch_conversion.js"></script>
+<script src="./js/ltc_conversion.js"></script>
+<script src="./js/javascript.js"></script>
+<script type="text/javascript">
+function start(){bitcoincashqr();litecoinqr();bitcoinqr(); }
+window.onload=start();  
+</script>
+</html>
